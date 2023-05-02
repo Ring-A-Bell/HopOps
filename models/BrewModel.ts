@@ -39,10 +39,10 @@ class BrewModel {
 
     public async retrieveAllBrews(response:any): Promise<any> {
         var query = this.model.find();
-        query.then((res) => {
+        query.then((res: any) => {
           console.log("Data retrieved: " + res);
           response.json(res);
-      }).catch((err) => {
+      }).catch((err: any) => {
           console.log("Error in retrieveAllArticles: " + err);
           response.json(err)
       })

@@ -31,7 +31,7 @@ class SaleHistoryModel {
 
     public retrieveAllSales(response:any, salesHistory: Number): any {
         var query = this.model.find({parentArticle: salesHistory}).select('sales');
-        query.exec( (err, itemArray) => {
+        query.exec( (err: Error, itemArray: any) => {
             response.json(itemArray) ;
         });
     }

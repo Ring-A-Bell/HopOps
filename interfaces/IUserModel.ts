@@ -4,7 +4,7 @@ interface IUserModel extends Mongoose.Document {
     userID: Mongoose.ObjectId;
     name: string;
     email: string;
-    premiumStatus: Enumerator;
+    premiumStatus: String;
 }
 
 export {IUserModel}

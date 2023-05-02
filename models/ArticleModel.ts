@@ -51,9 +51,9 @@ class ArticleModel {
         // } else {
         //     response.send('Article model not initialized');
         // }
-        query.then((res) => {
+        query.then((res: any) => {
             response.json(res);
-        }).catch((err) => {
+        }).catch((err: Error) => {
             console.log("Error in retrieveAllArticles: " + err);
             response.json(err)
         })
