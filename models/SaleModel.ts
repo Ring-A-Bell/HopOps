@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from '../DataAccess';
 import {ISaleModel} from '../interfaces/ISaleModel';
+import { nanoid } from 'nanoid';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;
@@ -18,10 +19,13 @@ class SaleModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                saleID: Mongoose.Schema.Types.ObjectId,
+                saleID: {
+                    type: String,
+                    default: () => nanoid()
+                },
                 date: Date,
                 paymentMethod: String,
-                soldItems: [Mongoose.Schema.Types.ObjectId]
+                soldItems: [String]
             }
         );
     }

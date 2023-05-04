@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "startserver": "tsc && node appserver.js",
+    "populate": "mongosh -f populate_db.js"
   },
   "private": true,
   "dependencies": {
@@ -26,7 +28,8 @@
     "bootstrap": "^5.2.3",
     "bulma": "^0.9.4",
     "express": "^4.18.2",
-    "mongoose": "^7.0.5",
+    "mongoose": "^7.1.0",
+    "nanoid": "^4.0.2",
     "ng-bootstrap": "^1.6.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

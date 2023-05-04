@@ -19,7 +19,7 @@ class SoldItemModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                soldItemID: Mongoose.Schema.Types.ObjectId,
+                soldItemID: String,
                 quantitySold: Number,
                 pricePerUnit: Number
             }

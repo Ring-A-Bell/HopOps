@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from '../DataAccess';
 import {IRecipeListModel} from '../interfaces/IRecipeListModel';
+import { nanoid } from 'nanoid';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;
@@ -18,9 +19,12 @@ class RecipeListModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                recipeListID: Mongoose.Schema.Types.ObjectId,
-                ownerID: Mongoose.Schema.Types.ObjectId,
-                recipes: [Mongoose.Schema.Types.ObjectId]
+                recipeListID: {
+                    type: String,
+                    default: () => nanoid()
+                },
+                ownerID: String,
+                recipes: [String]
             }
         );
     }

@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from '../DataAccess';
 import {IInventoryModel} from '../interfaces/IInventoryModel';
+import { nanoid } from 'nanoid';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;
@@ -18,9 +19,12 @@ class InventoryModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                inventoryID: Mongoose.Schema.Types.ObjectId,
-                ownerID: Mongoose.Schema.Types.ObjectId,
-                ingredients: [Mongoose.Schema.Types.ObjectId]
+                inventoryID: {
+                    type: String,
+                    default: () => nanoid()
+                },
+                ownerID: String,
+                ingredients: [String]
             }
         );
     }

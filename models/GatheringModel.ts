@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from '../DataAccess';
 import {IGatheringModel} from '../interfaces/IGatheringModel';
+import {nanoid} from 'nanoid';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;
@@ -23,10 +24,13 @@ class GatheringModel {
     public createSchema = (): void => {
         this.schema = new Mongoose.Schema(
             {
-                gatheringID: Mongoose.Schema.Types.ObjectId,
-                articleID: Mongoose.Schema.Types.ObjectId,
+                gatheringID: {
+                    type: String,
+                    default: () => nanoid()
+                },
+                articleID: String,
                 time: Date,
-                rsvps: [Mongoose.Schema.Types.ObjectId]
+                rsvps: [String]
             }, { collection: 'gatherings'}
         );  
     }

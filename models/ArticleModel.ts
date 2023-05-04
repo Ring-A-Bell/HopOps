@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from '../DataAccess';
 import {IArticleModel } from '../interfaces/IArticleModel';
+import { nanoid } from 'nanoid';
 
 
 let mongooseConnection = DataAccess.mongooseConnection;
@@ -23,12 +24,15 @@ class ArticleModel {
     public createSchema = (): void => {
         this.schema = new Mongoose.Schema(
             {
-                articleID: Mongoose.Schema.Types.ObjectId, // should this be objectID????
+                articleID: {
+                    type: String,
+                    default: () => nanoid()
+                },
                 title: String,
-                ownerID: Mongoose.Schema.Types.ObjectId,
+                ownerID: String,
                 date: Date,
                 body: String,
-                parentArticle: Mongoose.Schema.Types.ObjectId
+                parentArticle: String
             }, { collection: 'article'}
         );
     }
@@ -41,16 +45,23 @@ class ArticleModel {
     Custom methods below 
     */
 
+    public async createArticle(response: any, articleDetails: any): Promise<void> {
+        var id = nanoid();
+        articleDetails.articleID = id;
+        Object.assign(articleDetails, {"articleID": id});
+        this.model.create([articleDetails]);
+    }
+
+    public async getNumArticles(response:any): Promise<any> {
+        var query = this.model.count();
+        const queryResult = await query.exec();
+        console.log("Count is " , queryResult);
+        response.json(queryResult);
+    }
+
+
     public async retrieveAllArticles(response:any): Promise<any> {
         var query = this.model.find();
-        // const queryResult = await query.exec();
-        // if(queryResult) {
-        //     console.log("Data has been collected ->");
-        //     console.log(queryResult);
-        //     response.json(queryResult);
-        // } else {
-        //     response.send('Article model not initialized');
-        // }
         query.then((res: any) => {
             response.json(res);
         }).catch((err: Error) => {
@@ -71,8 +82,7 @@ class ArticleModel {
         }
     }
 
-    public async retrieveArticle(response:any, post: string): Promise<any> {
-        var postID = new Mongoose.Types.ObjectId(post);
+    public async retrieveArticle(response:any, postID: string): Promise<any> {
         var query = this.model.find({articleID: postID});
         const queryResult = await query.exec();
         if(queryResult) {
@@ -84,8 +94,7 @@ class ArticleModel {
         }
     }
 
-    public async retrieveReplies(response:any, post: string): Promise<any> {
-        var postID = new Mongoose.Types.ObjectId(post);
+    public async retrieveReplies(response:any, postID: string): Promise<any> {
         var query = this.model.find({'parentArticle': postID});
         const queryResult = await query.exec();
         if(queryResult) {
@@ -94,6 +103,21 @@ class ArticleModel {
             response.json(queryResult);
         } else {
             response.send('Article model not initialized');
+        }
+    }
+
+    public async deleteArticle(response:any, postID: string): Promise<any> {
+        var query = this.model.deleteOne({'articleID': postID});
+        try {
+            const queryResult = await query.exec();
+            if(queryResult) {
+                response.json(queryResult);
+            } else {
+                response.send("No data found");
+            }
+        } catch (error) {
+            console.log("Error in deleteArticle: " + error);
+            response.json(error);
         }
     }
 }

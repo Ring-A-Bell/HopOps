@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from '../DataAccess';
 import {IBreweryModel} from '../interfaces/IBreweryModel';
+import {nanoid} from 'nanoid';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;
@@ -22,7 +23,10 @@ class BreweryModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                breweryID: Mongoose.Schema.Types.ObjectId,
+                breweryID: {
+                    type: String,
+                    default: () => nanoid()
+                },
                 userID: Number,
                 name: String,
                 address: String,
@@ -33,6 +37,12 @@ class BreweryModel {
 
     public createModel(): void {
         this.model = mongooseConnection.model<IBreweryModel>("brewery", this.schema);
+    }
+
+    public async createBrewery(response: any, breweryDetails: any): Promise<void> {
+        var id = nanoid();
+        breweryDetails.breweryID = id;
+        this.model.create([breweryDetails]);
     }
 
     public async retrieveAllBreweries(response: any): Promise<void> {
@@ -47,7 +57,7 @@ class BreweryModel {
     }
 
     public async retrieveBrewery(response: any, arg_breweryID: string): Promise<void> {
-        var query = this.model.findOne({breweryID: new Mongoose.Types.ObjectId(arg_breweryID)});
+        var query = this.model.findOne({breweryID: arg_breweryID});
 
         try {
             const queryResult = await query.exec();
@@ -61,8 +71,8 @@ class BreweryModel {
         }
     }
 
-    public async updateBrewery(response: any, newBreweryDetails: any): Promise<void> {
-        var query = this.model.replaceOne({breweryID: newBreweryDetails.breweryID}, newBreweryDetails);
+    public async updateBrewery(response: any, arg_breweryID: string, newBreweryDetails: any): Promise<void> {
+        var query = this.model.replaceOne({breweryID: arg_breweryID}, newBreweryDetails);
         const queryResult = await query.exec();
         if(queryResult.modifiedCount) {
             response.json(queryResult);
@@ -73,7 +83,7 @@ class BreweryModel {
     }
 
     public async deleteBrewery(response: any, arg_breweryID: string): Promise<void> {
-        var query = this.model.deleteOne({breweryID: new Mongoose.Types.ObjectId(arg_breweryID)});
+        var query = this.model.deleteOne({breweryID: arg_breweryID});
         const queryResult = await query.exec();
         if(queryResult.deletedCount==1) {
             response.json(queryResult);

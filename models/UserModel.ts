@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from './../DataAccess';
 import {IUserModel} from '../interfaces/IUserModel';
+import { nanoid } from 'nanoid';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;
@@ -18,7 +19,10 @@ class UserModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                userID: { type: Mongoose.Schema.Types.ObjectId, required: true }, // should this be objectID????
+                userID: {
+                    type: String,
+                    default: () => nanoid()
+                },
                 name: String,
                 email: String,
                 premiumStatus: String

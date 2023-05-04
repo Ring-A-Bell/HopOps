@@ -1,6 +1,7 @@
 import * as Mongoose from 'mongoose';
 import {DataAccess} from '../DataAccess';
 import {ISaleHistoryModel} from '../interfaces/ISaleHistoryModel';
+import { nanoid } from 'nanoid';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;
@@ -18,9 +19,12 @@ class SaleHistoryModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                saleHistoryID: { type: Mongoose.Schema.Types.ObjectId, required: true }, // should this be objectID????
-                ownerID: Mongoose.Schema.Types.ObjectId,
-                sales: [Mongoose.Schema.Types.ObjectId]
+                saleHistoryID: {
+                    type: String,
+                    default: () => nanoid()
+                }, 
+                ownerID: String,
+                sales: [String]
             }
         );
     }
