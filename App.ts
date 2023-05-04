@@ -82,9 +82,10 @@ class App {
     // Create a new forum article
     router.post('/app/articles', (req, res) => {
         var jsonObj = req.body;
-        const x = this.Articles.model.create([jsonObj]);
+        jsonObj.articleID = nanoid();
+        const x = this.Articles.createArticle(res, jsonObj);
         console.log(x);
-        res.send('{"id":"' + x.articleID + '"}');
+        res.send('{"id":"' + jsonObj.articleID + '"}');
     });
 
     // Delete a forum article
