@@ -187,7 +187,7 @@ class App {
 
     // Create new community event
     router.post('/app/gatherings', (req, res) => {
-      const id = new ObjectId();
+      const id = nanoid();
       var jsonObj = req.body;
       jsonObj.listId = id;
       const x = this.Gathering.model.create([jsonObj]);
@@ -197,7 +197,7 @@ class App {
 
     //Create a new recipe
     router.post('/app/recipes', (req, res) => {
-      const id = crypto.randomBytes(24).toString("hex");
+      const id = nanoid();
       var jsonObj = req.body;
       jsonObj.recipeID = id;
       //const x = this.Recipe.model.create([jsonObj]);
@@ -221,7 +221,7 @@ class App {
 
     // Create a new ingredient
     router.post('/app/ingredients', (req, res) => {
-      const id = crypto.randomBytes(12).toString("hex");
+      const id = nanoid();
       console.log(req.body);
       const ingredient = {
         ingredientID: id,

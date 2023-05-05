@@ -1,29 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RecipeModel = void 0;
-const Mongoose = require("mongoose");
-const DataAccess_1 = require("../DataAccess");
-let mongooseConnection = DataAccess_1.DataAccess.mongooseConnection;
-let mongooseObj = DataAccess_1.DataAccess.mongooseInstance;
-class RecipeModel {
-    constructor() {
+var Mongoose = require("mongoose");
+var DataAccess_1 = require("../DataAccess");
+var nanoid_1 = require("nanoid");
+var mongooseConnection = DataAccess_1.DataAccess.mongooseConnection;
+var mongooseObj = DataAccess_1.DataAccess.mongooseInstance;
+var RecipeModel = /** @class */ (function () {
+    function RecipeModel() {
         this.createSchema;
         this.createModel;
     }
     // Due to a quirk of typescript, the schema has to be manually defined both here and in IRecipeModel.ts
-    createSchema() {
+    RecipeModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
-            recipeID: Mongoose.Schema.Types.ObjectId,
+            recipeID: {
+                type: String,
+                default: function () { return (0, nanoid_1.nanoid)(); }
+            },
             title: String,
             description: String,
             image: String,
             body: String,
-            recipe: [{ ingredient: Mongoose.Schema.Types.ObjectId, quantity: Number }],
+            recipe: [{ ingredient: String, quantity: Number }],
             favorite: Boolean
         });
-    }
-    createModel() {
+    };
+    RecipeModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("recipe", this.schema);
-    }
-}
+    };
+    return RecipeModel;
+}());
 exports.RecipeModel = RecipeModel;
