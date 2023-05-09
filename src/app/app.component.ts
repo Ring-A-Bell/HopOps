@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RecipeCardComponent } from './recipe-card/recipe-card.component';
+import { RecipePageComponent } from './recipe-page/recipe-page.component';
 
 @Component({
   selector: 'app-root',
