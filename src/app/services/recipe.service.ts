@@ -9,9 +9,16 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  public getRecipes(): Observable<any> {
+  public getUserRecipes(): Observable<any> {
+    var jsonRecipes: any;
+    const userID: String = "YPs-zlGU6gwxOAH3O-zWb";
+    var jsonObj: any;
+    return this.http.get("http://localhost:8080/app/userrecipes/" + userID);
+  }
+
+  public getAllRecipes(): Observable<any> {
     var jsonRecipes: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/userrecipes/YPs-zlGU6gwxOAH3O-zWb");
+    return this.http.get("http://localhost:8080/app/recipes");
   }
 }

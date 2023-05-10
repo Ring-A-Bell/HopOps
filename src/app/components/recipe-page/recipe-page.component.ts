@@ -13,6 +13,7 @@ export class RecipePageComponent {
   jsonRecipes: any;
 
   ngOnInit(): void {
-    this.recipeService.getRecipes().subscribe((data: any) => this.jsonRecipes = data[0].recipes);
+    this.recipeService.getUserRecipes().subscribe((data: any) => this.jsonRecipes = data[0].recipes);
+    //this.recipeService.getAllRecipes().subscribe((data: any) =>  this.jsonRecipes = data);
   }
 }
