@@ -8,7 +8,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
-import { RecipeService } from './services/recipe.service'
+import { RecipeService } from './services/recipe.service';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { HomePageComponent } from './components/home-page/home-page.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RecipeService } from './services/recipe.service'
     HeaderComponent,
     FooterComponent,
     RecipeCardComponent,
-    RecipePageComponent
+    RecipePageComponent,
+    PagenotfoundComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
