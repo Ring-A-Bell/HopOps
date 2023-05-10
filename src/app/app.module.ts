@@ -4,11 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { RecipeCardComponent } from './recipe-card/recipe-card.component';
-import { RecipePageComponent } from './recipe-page/recipe-page.component';
-import { RecipeService } from './recipe.service';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
+import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
+import { RecipeService } from './services/recipe.service'
 
 @NgModule({
   declarations: [
