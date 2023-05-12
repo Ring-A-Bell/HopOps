@@ -10,7 +10,8 @@ import { RecipeCardComponent } from './components/recipe-card/recipe-card.compon
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
 import { RecipeService } from './services/recipe.service';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { HomePageComponent } from './components/home-page/home-page.component'
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { SalesPageComponent } from './components/sales-page/sales-page.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomePageComponent } from './components/home-page/home-page.component'
     RecipeCardComponent,
     RecipePageComponent,
     PagenotfoundComponent,
-    HomePageComponent
+    HomePageComponent,
+    SalesPageComponent
   ],
   imports: [
     BrowserModule,
