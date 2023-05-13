@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "mocha",
     "startserver": "tsc && node appserver.js",
     "populate": "mongosh -f populate_db.js"
   },
@@ -31,13 +31,13 @@
     "bootstrap": "^5.2.3",
     "bulma": "^0.9.4",
     "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
     "express": "^4.18.2",
     "mocha": "^10.2.0",
     "mongoose": "^7.1.0",
     "nanoid": "^4.0.2",
     "ng-bootstrap": "^1.6.3",
     "rxjs": "~7.8.0",
-    "sinon": "^15.0.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
