@@ -1,11 +1,14 @@
 <app-header></app-header>
 <div class="forehead"></div>
-<div class="container">
-  <div class="row">
-      <div class="col md-3 sm-1" *ngFor="let recipe of jsonRecipes">
-        <app-recipe-card [recipe]="recipe"></app-recipe-card>
-      </div>
-      <div class="forehead"></div>
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+        <div class="col md-3 sm-1" *ngFor="let recipe of jsonRecipes">
+          <app-recipe-card [recipe]="recipe"></app-recipe-card>
+        </div>
+        <div class="forehead"></div>
+    </div>
   </div>
+  <button class="btn btn-primary create-new" (click)="createNewRecipe()">Create New</button>
 </div>
 <app-footer></app-footer>
