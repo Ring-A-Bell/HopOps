@@ -5,7 +5,7 @@ import { SalesPageComponent } from './components/sales-page/sales-page.component
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CommunityEventsComponent } from './components/community-events/community-events.component'
-import { InventoryComponent } from './components/inventory/inventory.component'
+import { InventoryComponent } from './components/inventory-page/inventory.component'
 
 const routes: Routes = [
   { path: 'my-recipes', component: RecipePageComponent },
