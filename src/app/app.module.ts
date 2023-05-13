@@ -12,7 +12,8 @@ import { RecipeService } from './services/recipe.service';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SalesPageComponent } from './components/sales-page/sales-page.component';
-import { CommunityEventsComponent } from './components/community-events/community-events.component'
+import { CommunityEventsComponent } from './components/community-events/community-events.component';
+import { InventoryComponent } from './components/inventory/inventory.component'
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CommunityEventsComponent } from './components/community-events/communit
     PagenotfoundComponent,
     HomePageComponent,
     SalesPageComponent,
-    CommunityEventsComponent
+    CommunityEventsComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
