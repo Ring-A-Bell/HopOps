@@ -11,7 +11,9 @@ import { RecipePageComponent } from './components/recipe-page/recipe-page.compon
 import { RecipeService } from './services/recipe.service';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { SalesPageComponent } from './components/sales-page/sales-page.component'
+import { SalesPageComponent } from './components/sales-page/sales-page.component';
+import { CommunityEventsComponent } from './components/community-events/community-events.component'
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { SalesPageComponent } from './components/sales-page/sales-page.component
     RecipePageComponent,
     PagenotfoundComponent,
     HomePageComponent,
-    SalesPageComponent
+    SalesPageComponent,
+    CommunityEventsComponent
   ],
   imports: [
     BrowserModule,

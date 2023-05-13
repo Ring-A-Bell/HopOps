@@ -4,10 +4,12 @@ import { RecipePageComponent } from './components/recipe-page/recipe-page.compon
 import { SalesPageComponent } from './components/sales-page/sales-page.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { CommunityEventsComponent } from './components/community-events/community-events.component'
 
 const routes: Routes = [
   { path: 'my-recipes', component: RecipePageComponent },
   { path: 'sales', component: SalesPageComponent },
+  { path: 'community-events', component: CommunityEventsComponent },
   { path: '', component: HomePageComponent},
   { path: '**', component: PagenotfoundComponent }
 ];
