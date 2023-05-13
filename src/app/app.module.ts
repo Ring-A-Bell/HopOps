@@ -13,7 +13,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SalesPageComponent } from './components/sales-page/sales-page.component';
 import { CommunityEventsComponent } from './components/community-events/community-events.component';
-import { InventoryComponent } from './components/inventory-page/inventory.component'
+import { InventoryComponent } from './components/inventory-page/inventory.component';
+import { EventCardComponent } from './components/event-card/event-card.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { InventoryComponent } from './components/inventory-page/inventory.compon
     HomePageComponent,
     SalesPageComponent,
     CommunityEventsComponent,
-    InventoryComponent
+    InventoryComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./community-events.component.scss'] 
 })
 export class CommunityEventsComponent {
-
+  event: any; // Add the 'event' property declaration here
 }
