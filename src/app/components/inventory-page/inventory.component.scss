@@ -1,0 +1,27 @@
+.create-new {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  
+    // Customize the button styling
+    &.btn {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  
+    &.btn:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+}
+  
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-grow: 1;
+}

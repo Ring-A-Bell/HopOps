@@ -1,6 +1,14 @@
 <app-header></app-header>
 <div class="forehead"></div>
-<p>inventory works!</p>
-<div class="container">
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+        <div class="col md-3 sm-1" *ngFor="let recipe of jsonInventories">
+            <p>inventory works!</p>
+        </div>
+        <div class="forehead"></div>
+    </div>
+  </div>
+  <button class="btn btn-primary create-new" (click)="createNewInventory()">Create New</button>
 </div>
 <app-footer></app-footer>
