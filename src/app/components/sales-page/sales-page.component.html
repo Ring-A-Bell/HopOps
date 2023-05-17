@@ -2,5 +2,21 @@
 <div class="forehead"></div>
 <p>sales-page works!</p>
 <div class="container">
+    <div class="row">
+        <p>Hello all sales: {{ saleList }} </p>
+    </div>
+    <ng-container matColumnDef="SaleID">
+        <th mat-header-cell *matHeaderCellDef> SaleID </th>
+        <td mat-cell *matCellDef="let sale"> {{sale.saleID}} </td>
+    </ng-container>
+    <ng-container matColumnDef="SaleDate">
+        <th mat-header-cell *matHeaderCellDef> Sale Date </th>
+        <td mat-cell *matCellDef="let sale"> {{sale.date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="PaymentMethod">
+        <th mat-header-cell *matHeaderCellDef> Payment Method </th>
+        <td mat-cell *matCellDef="let sale"> {{sale.paymentMethod}} </td>
+    </ng-container>
+
 </div>
 <app-footer></app-footer>
