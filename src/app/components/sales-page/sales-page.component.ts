@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SalesService } from 'src/app/services/sales.service';
-import { MatTableDataSource } from '@angular/material/table'
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-sales-page',
@@ -20,7 +20,8 @@ export class SalesPageComponent implements OnInit{
   constructor(private router: Router, private $sales: SalesService){
       $sales.getSaleHistory(this.user).subscribe( (result: any) => {
         this.saleList = result;
-        console.log("Sales page loaded")
+        this.dataSource = new MatTableDataSource(result);
+        console.log("Sales page loaded");
       })
   };
 
