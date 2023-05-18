@@ -14,7 +14,8 @@ export class CommunityEventsComponent {
   jsongatherings: any;
 
   ngOnInit(): void {
-    this.CommunityEventsService.getAllCommunityEvents().subscribe((data: any) => this.jsongatherings = data[0].recipes);
-
-}
-}
+    this.CommunityEventsService.getAllCommunityEvents().subscribe((data: any) => {
+    console.log(data);
+    this.jsongatherings = data[0].community
+  });  
+}}
