@@ -14,7 +14,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { SalesPageComponent } from './components/sales-page/sales-page.component';
 import { CommunityEventsComponent } from './components/community-events/community-events.component';
 import { InventoryComponent } from './components/inventory-page/inventory.component';
-import { EventCardComponent } from './components/event-card/event-card.component'
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { EventCardComponent } from './components/event-card/event-card.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
