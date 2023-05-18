@@ -20,7 +20,8 @@ export class InventoryComponent {
   ngOnInit(): void {
     this.InventoryService.getInventory(this.inventoryID).subscribe((data: any) => {
       console.log(data);
-      this.jsonInventories = data[0].inventories;
+      this.jsonInventories = data;
+      this.dataSource = new MatTableDataSource(data);
       console.log("Inventory page loaded");
     });
   }
