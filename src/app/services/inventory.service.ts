@@ -6,33 +6,32 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InventoryService {
-  inventoryID: String = "000000000000000000051";
-  ownerID: String = "000000000000000000021";
+
   constructor(private http: HttpClient) { }
 
-  public getInventory(): Observable<any> {
+  public getInventory(inventoryID: string): Observable<any> {
     var jsonInventories: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/inventories/" + this.inventoryID);
+    return this.http.get("http://localhost:8080/app/inventories/" + inventoryID);
   }
 
-  public getUserInventories(): Observable<any> {
+  public getUserInventories(ownerID: string): Observable<any> {
     var jsonInventories: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/inventories/user/" + this.ownerID);
+    return this.http.get("http://localhost:8080/app/inventories/user/" + ownerID);
   }
 
-  public createJSONInventory(): any {
+  public createJSONInventory(ownerID: string): any {
     var obj: any = {
-      "ownerID": this.ownerID,
+      "ownerID": ownerID,
       "ingredients": [ "TI7OBzZrGmEv6zVQI1vM8", "Cp4opcfHR6Yu6MgYcaK_3"]
     }
     return obj;
   }
 
-  public createNewInventory(): Observable<any> {
+  public createNewInventory(ownerID: string): Observable<any> {
     var jsonObj: any;
-    jsonObj = this.createJSONInventory();
+    jsonObj = this.createJSONInventory(ownerID);
     console.log(jsonObj);
     return this.http.post("http://localhost:8080/app/inventories", jsonObj);
   }
