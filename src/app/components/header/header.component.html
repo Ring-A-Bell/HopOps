@@ -11,27 +11,26 @@
                 Home
             </a>
 
-            <a class="navbar-item">
-                Our Community
+            <a class="navbar-item" routerLink="/my-recipes">
+                Recipes
+            </a>
+
+            <a class="navbar-item" routerLink="/inventory">
+                Inventory
+            </a>
+
+            <a class="navbar-item" routerLink="/sales">
+                Sales Dashboard
             </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    What We Do  
+                <a class="navbar-link" routerLink="/inventory">
+                    About Us  
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" routerLink="/my-recipes">
-                        Recipe Management
-                    </a>
                     <a class="navbar-item">
                         Brew Tracking
-                    </a>
-                    <a class="navbar-item" routerLink="/inventory">
-                        Inventory
-                    </a>
-                    <a class="navbar-item" routerLink="/sales">
-                        Sales Dashboard
                     </a>
                 
                     <hr class="navbar-divider">
@@ -40,10 +39,6 @@
                     </a>
                 </div>
             </div>
-
-            <a class="navbar-item">
-                About Us
-            </a>
         </div>
 
         <div class="navbar-end">

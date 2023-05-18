@@ -1,1 +1,10 @@
 @import "bulma";
+.navbar-dropdown a.navbar-item {
+    color: #000000; /* Set the color of the dropdown items */
+
+    &:hover {
+        background-color: #000000; /* Change the hover color */
+        color: #ffffff; /* Change the hover text color */
+        text-decoration: underline;
+    }
+}
