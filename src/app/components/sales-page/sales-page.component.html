@@ -9,7 +9,7 @@
         </ng-container>
         <ng-container matColumnDef="SaleDate">
             <th mat-header-cell *matHeaderCellDef> Sale Date </th>
-            <td mat-cell *matCellDef="let sale"> {{sale.date}} </td>
+            <td mat-cell *matCellDef="let sale"> {{sale.date | date: "short"}} </td>
         </ng-container>
         <ng-container matColumnDef="PaymentMethod">
             <th mat-header-cell *matHeaderCellDef> Payment Method </th>
