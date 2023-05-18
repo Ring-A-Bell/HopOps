@@ -13,7 +13,10 @@ export class InventoryComponent {
   jsonInventories: any;
 
   ngOnInit(): void {
-    this.InventoryService.getInventory().subscribe((data: any) => this.jsonInventories = data[0].inventories);
+    this.InventoryService.getInventory().subscribe((data: any) => {
+      console.log(data);
+      this.jsonInventories = data[0].inventories;
+    });
     //this.InventoryService.getAllRecipes().subscribe((data: any) =>  this.jsonInventories = data);
   }
 

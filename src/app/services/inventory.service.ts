@@ -19,7 +19,7 @@ export class InventoryService {
   public getUserInventories(): Observable<any> {
     var jsonInventories: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/inventories/" + this.ownerID);
+    return this.http.get("http://localhost:8080/app/inventories/user/" + this.ownerID);
   }
 
   public createJSONInventory(): any {
