@@ -1,8 +1,15 @@
 <app-header></app-header>
 <div class="forehead"></div>
 <div class="spacing-row"></div>
+<h1 class="display-10 text-center"> Sale and Transaction History </h1>
+<hr/>
+<div class="spacing-row"></div>
+
 <div class="container">
+    <!-- Sales Table Template -->
     <table mat-table [dataSource]="saleList" class="mat-elevation-z8">
+
+        <!-- Column defintions -->
         <ng-container matColumnDef="SaleID">
             <th mat-header-cell *matHeaderCellDef> SaleID </th>
             <td mat-cell *matCellDef="let sale"> {{sale.saleID}} </td>
@@ -16,6 +23,7 @@
             <td mat-cell *matCellDef="let sale"> {{sale.paymentMethod}} </td>
         </ng-container>
 
+        <!-- Row Declarations -->
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
         <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 
