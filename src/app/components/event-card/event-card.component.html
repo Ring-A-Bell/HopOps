@@ -1,25 +1,31 @@
-<div class="card">
-  <div class="event-image"><img src="assets/img/current-event1.jpg"></div>
-  <div class="card-body">
-    <h3>Beer Festival</h3>
-    <p class="event-price">$20 per person</p>
-    <h5 class="card-ID">Time and Date: {{event.time}}</h5>
-    <p class="card-ID">{{event.rsvp}}</p>
-    <p>In celebration of our beer culture join us for the Highlands Ranch Beer Festival. Come enjoy live music, beer from local and national breweries, and lawn games. Proceeds benefit the Highlands Ranch Scholarship Fund.</p>
+<div class="card-container">
+  <div class="card">
+    <div class="card-body">
+      <div class="event-image"><img src="assets/img/current-event1.jpg"></div>
+      <h3 class="card-ID">{{event.title}}</h3>
+      <p class="event-price">$20 per person</p>
+      <h5 class="card-ID">Time and Date: {{event.time | date: "short"}} </h5>
+      <p class="card-ID">{{event.rsvp}}</p>
+      <p class="card-ID">{{event.Description}}</p>
+      <br>  
       <button class="event-rsvp-btn">RSVP</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="event-image"><img src="assets/img/current-event2.jpg"></div>
+      <h3 class="card-ID">{{event.title}}</h3>
+      <p class="event-price">$10 per person</p>
+      <h5 class="card-ID">Time and Date: {{event.time | date: "short"}} </h5>
+      <p class="card-ID">{{event.rsvp}}</p>
+      <p class="card-ID">{{event.Description}}</p>
+      <br> 
+      <button class="event-rsvp-btn">RSVP</button>
+    </div>
   </div>
 </div>
-<div class="card">
-  <div class="event-image"><img src="assets/img/current-event1.jpg"></div>
-  <div class="card-body">
-    <h3>Beer Festival</h3>
-    <p class="event-price">$10 per person</p>
-    <h5 class="card-ID">Time and Date: {{event.time}}</h5>
-    <p class="card-ID">{{event.rsvp}}</p>
-    <p>In celebration of our beer culture join us for the Highlands Ranch Beer Festival. Come enjoy live music, beer from local and national breweries, and lawn games. Proceeds benefit the Highlands Ranch Scholarship Fund.</p>
-      <button class="event-rsvp-btn">RSVP</button>
-  </div>
-</div>
+
 
 
 <!-- <div class="card">
