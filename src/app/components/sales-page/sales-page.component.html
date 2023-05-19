@@ -25,7 +25,9 @@
 
         <!-- Row Declarations -->
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+        <tr mat-row 
+        (click)="clickedRow(myRowData.saleID)"
+        *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 
     </table>
 

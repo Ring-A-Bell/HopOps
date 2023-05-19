@@ -1,3 +1,22 @@
-.spacing-row{
+.spacing-row {
     margin: 20px;
+}
+
+.mat-column-PaymentMethod {
+    text-align: center;
+}
+.mat-column-SaleDate {
+    text-align: center;
+}
+
+// Change curosr when hovering tanle
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+// Change table row when hovered
+.mat-mdc-row:hover .mat-mdc-cell {
+    background-color: lightgray;
 }

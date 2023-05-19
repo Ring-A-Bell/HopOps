@@ -29,4 +29,8 @@ export class SalesPageComponent implements OnInit{
     
   }
 
+  clickedRow(saleid: string){
+    console.log("Clicked on row: ", saleid)
+  }
+
 }
