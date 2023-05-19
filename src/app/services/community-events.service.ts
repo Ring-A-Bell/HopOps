@@ -10,7 +10,7 @@ export class CommunityEventsService {
   constructor(private http: HttpClient) { }
 
   public getAllCommunityEvents(): Observable<any> {
-    var jsonCommunityEvents: any;
+    var jsonevent: any;
     var jsonObj: any;
     return this.http.get("http://localhost:8080/app/gatherings");
   }

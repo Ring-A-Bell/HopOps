@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./community-events.component.scss'] 
 })
 export class CommunityEventsComponent {
-  event: any; // Add the 'event' property declaration here
+  gathering: any; // Add the 'event' property declaration here
   constructor(private CommunityEventsService: CommunityEventsService, private router: Router) { }
 
-  jsongatherings: any;
+  jsonevent: any;
 
   ngOnInit(): void {
     this.CommunityEventsService.getAllCommunityEvents().subscribe((data: any) => {
     console.log(data);
-    this.jsongatherings = data[0].community
+    this.jsonevent = data;
   });  
 }}

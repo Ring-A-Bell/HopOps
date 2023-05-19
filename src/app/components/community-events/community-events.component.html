@@ -1,74 +1,13 @@
-<html>
-<head>
-  <title>Community Events</title>
-  <link rel="stylesheet" type="text/css" href="community-events.component.scss">
-  <style>
-    .event-image img {
-      width: 200px; /* Specify the desired width */
-      height: auto; /* Adjusts the height proportionally */
-    }
-    
-    .card {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 10px;
-      display: flex;
-    }
-    
-    .card .event-image {
-      margin-right: 10px;
-    }
-    
-    .card .event-description {
-      flex-grow: 1;
-    }
-    
-    .card .event-price {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    
-    .card .event-rsvp {
-      color: blue;
-      cursor: pointer;
-    }
-  </style>  
-</head>
-<body>
-  <app-header></app-header>
-
-  <nav>
-    <ul>
-      <li><a href="#current-events">Current Events</a></li>
-      <li><a href="#past-events">Past Events</a></li>
-      <li><a href="#upcoming-events">Upcoming Events</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section id="current-events">
-      <h2>Current Events</h2>
-      
+<app-header></app-header>
+<div class="forehead"></div>
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+        <div class="col md-3 sm-1" *ngFor="let event of jsonevent">
           <app-event-card [event]="event"></app-event-card>
-          
-      
-      <!-- Add more cards for other current events -->
-    </section>
-
-    <section id="past-events">
-      <h2>Past Events</h2>
-      <app-event-card [event]="event"></app-event-card>
-      <!-- Add more cards for other past events -->
-    </section>
-
-    <section id="upcoming-events">
-      <h2>Upcoming Events</h2>
-      <app-event-card [event]="event"></app-event-card>
-          <!-- Add more cards for other upcoming events -->
-          </section>
-          
-            </main>
-            <app-footer></app-footer>
-          </body>
-          </html>
+        </div>
+        <div class="forehead"></div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
