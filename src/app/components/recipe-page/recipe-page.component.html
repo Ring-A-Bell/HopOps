@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="forehead"></div>
 <div class="main-content">
-  <div class="container">
+  <div class="container" id="recipes">
     <div class="row">
         <div class="col md-3 sm-1" *ngFor="let recipe of jsonRecipes">
           <app-recipe-card [recipe]="recipe"></app-recipe-card>
@@ -9,6 +9,43 @@
         <div class="forehead"></div>
     </div>
   </div>
-  <button class="btn btn-primary create-new" (click)="createNewRecipe()">Create New</button>
+  <button class="btn btn-primary create-new" (click)="renderForm()">Create New</button>
+  <form #recipeForm="ngForm">
+  <div id="input-form">
+    <mat-form-field>
+      <mat-label>Recipe ID</mat-label>Recipe ID
+      <input matInput [(ngModel)]="recipeID" name="recipeID">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Title</mat-label>Title
+      <input matInput [(ngModel)]="title" name="title">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>Description
+      <textarea matInput [(ngModel)]="description" name="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>Image URL
+      <input matInput [(ngModel)]="image" name="image">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Body</mat-label>Body
+      <textarea matInput [(ngModel)]="body" name="body"></textarea>
+    </mat-form-field>
+    <div *ngFor="let ingredient of recipeIngredients; let i = index">
+      <mat-form-field>
+        <mat-label>Ingredient</mat-label>Ingredient
+        <input matInput [(ngModel)]="ingredient.ingredient" name="ingredient{{i}}">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Quantity</mat-label>Quantity
+        <input matInput [(ngModel)]="ingredient.quantity" name="quantity{{i}}">
+      </mat-form-field>
+    </div>
+    <button mat-button (click)="addIngredient()">Add Ingredient</button>
+    <mat-option [(ngModel)]="favorite" name="favorite">Favorite</mat-option>
+    <button (click)="submitRecipe()">Submit</button>
+  </div>
+  </form>
 </div>
 <app-footer></app-footer>

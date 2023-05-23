@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,9 @@ import { CommunityEventsComponent } from './components/community-events/communit
 import { InventoryComponent } from './components/inventory-page/inventory.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { MatTableModule } from '@angular/material/table';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    FormsModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
