@@ -2,13 +2,17 @@
 <div class="forehead"></div>
 <div class="main-content">
   <div class="container" id="recipes">
-    <div class="row">
-        <div class="col md-3 sm-1" *ngFor="let recipe of jsonRecipes">
+    <div class="row justify-content-around">
+      <ng-container *ngFor="let recipe of jsonRecipes">
+        <div class="col-md-4 col-sm-6 col-12">
           <app-recipe-card [recipe]="recipe"></app-recipe-card>
+          <div class="forehead"></div>
         </div>
-        <div class="forehead"></div>
+      </ng-container>
+      <div class="forehead"></div>
     </div>
   </div>
+  
   <button class="btn btn-primary create-new" (click)="renderForm()">Create New</button>
 
   
