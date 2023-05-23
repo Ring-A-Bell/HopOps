@@ -13,10 +13,11 @@
     </div>
   </div>
   
-  <button class="btn btn-primary create-new" (click)="renderForm()">Create New</button>
-
+  <button class="btn btn-primary create-new" id="renderFormButton" (click)="renderForm()">Create New</button>
+  <button class="btn btn-primary create-new" id="cancelFormButton" (click)="cancelForm()">Cancel</button>
   
-    <form [formGroup]="inputFormDetails" (ngSubmit)="submitRecipe()"><div id="input-form">
+    <form [formGroup]="inputFormDetails" (ngSubmit)="submitRecipe()">
+      <div id="input-form">
         <label for="title">Title</label>
         <input matInput formControlName="title">
         <label for="description">Description</label>
@@ -25,11 +26,12 @@
         <input formControlName="image">
         <label for="body">Recipe</label>
         <textarea matInput formControlName="body"></textarea>
-      <button mat-button (click)="addIngredient()">Add Ingredient</button>
-      <label for="favcheck">Favorite</label>
-      <input type="checkbox" id="favcheck" formControlName="favorite">
-      <button type="submit">Submit</button>
-    </div>
+        <button mat-button (click)="addIngredient()">Add Ingredient</button>
+        <label for="favcheck">Favorite</label>
+        <input type="checkbox" id="favcheck" formControlName="favorite">
+        <button type="submit">Submit</button>
+      </div>
     </form>
+    <div class="forehead"></div>
 </div>
 <app-footer></app-footer>

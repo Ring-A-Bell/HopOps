@@ -32,9 +32,26 @@ export class RecipePageComponent {
   renderForm() {
     var inputForm = document.getElementById("input-form");
     var recipes = document.getElementById("recipes");
+    var addRecipeButton = document.getElementById("renderFormButton");
+    var cancelRecipeButton = document.getElementById("cancelFormButton");
     if (inputForm && recipes) {
       inputForm.style.display = "flex";
       recipes.style.display = "none"
+      addRecipeButton!.style.display = "none";
+      cancelRecipeButton!.style.display = "flex";
+    }
+  }
+
+  cancelForm() {
+    var inputForm = document.getElementById("input-form");
+    var recipes = document.getElementById("recipes");
+    var addRecipeButton = document.getElementById("renderFormButton");
+    var cancelRecipeButton = document.getElementById("cancelFormButton");
+    if (inputForm && recipes) {
+      inputForm.style.display = "none";
+      recipes.style.display = "flex"
+      addRecipeButton!.style.display = "flex";
+      cancelRecipeButton!.style.display = "none";
     }
   }
 
