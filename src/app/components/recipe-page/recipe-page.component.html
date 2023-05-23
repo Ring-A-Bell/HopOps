@@ -10,32 +10,22 @@
     </div>
   </div>
   <button class="btn btn-primary create-new" (click)="renderForm()">Create New</button>
-  <form [formGroup]="inputFormDetails" (ngSubmit)="submitRecipe()">
-  <div id="input-form">
-    <mat-form-field>
-      <mat-label>Recipe Name</mat-label>Recipe ID
-      <input id="name" type="text" formControlName="recipeID">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Title</mat-label>Title
-      <input matInput formControlName="title">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Description</mat-label>Description
-      <textarea formControlName="description"></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Image URL</mat-label>Image URL
-      <input formControlName="image">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Body</mat-label>Body
-      <textarea matInput formControlName="body"></textarea>
-    </mat-form-field>
-    <button mat-button (click)="addIngredient()">Add Ingredient</button>
-    <mat-option formControlName="favorite">Favorite</mat-option>
-    <button type="submit">Submit</button>
-  </div>
-  </form>
+
+  
+    <form [formGroup]="inputFormDetails" (ngSubmit)="submitRecipe()"><div id="input-form">
+        <label for="title">Title</label>
+        <input matInput formControlName="title">
+        <label for="description">Description</label>
+        <textarea formControlName="description"></textarea>
+        <label for="image">Image URL</label>
+        <input formControlName="image">
+        <label for="body">Recipe</label>
+        <textarea matInput formControlName="body"></textarea>
+      <button mat-button (click)="addIngredient()">Add Ingredient</button>
+      <label for="favcheck">Favorite</label>
+      <input type="checkbox" id="favcheck" formControlName="favorite">
+      <button type="submit">Submit</button>
+    </div>
+    </form>
 </div>
 <app-footer></app-footer>

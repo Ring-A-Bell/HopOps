@@ -14,20 +14,17 @@ export class RecipePageComponent {
   jsonRecipes: any;
 
   inputFormDetails = this.formBuilder.group({
-    recipeID: "",
     title: "",
     description: "",
     image: "",
     body: "",
-    recipeIngredients: { 
-      ingredient: "",
-      quantity: 0 
-    },
+    recipeIngredients: [{ }],
     favorite: false
   });
 
   ngOnInit(): void {
     this.recipeService.getUserRecipes().subscribe((data: any) => this.jsonRecipes = data[0].recipes);
+    console.log(this.jsonRecipes);
     //this.recipeService.getAllRecipes().subscribe((data: any) =>  this.jsonRecipes = data);
   }
 
@@ -43,21 +40,19 @@ export class RecipePageComponent {
   addIngredient() { }
 
   submitRecipe() {
-    console.log(this.inputFormDetails.value);
-    console.log(this.inputFormDetails);
+    this.createNewRecipe(this.inputFormDetails.value);
     this.inputFormDetails.reset();
   }
 
-  createNewRecipe() {
-    //console.log(this.newRecipe);
-    //this.recipeService.createNewRecipe(this.newRecipe).subscribe((data) => {
-      //var insertedID = data[0]._id;
-      //this.recipeService.addRecipeToUserList(insertedID).subscribe((data) => {
-       // console.log(data);
-     // });
-   // });
-   // this.router.navigateByUrl('/my-recipes', { skipLocationChange: true }).then(() => {
-      //location.reload();
-   // });
+  createNewRecipe(newRecipe: any) {
+    this.recipeService.createNewRecipe(newRecipe).subscribe((data) => {
+      var insertedID = data[0]._id;
+      this.recipeService.addRecipeToUserList(insertedID).subscribe((data) => {
+        console.log(data);
+      });
+    });
+    this.router.navigateByUrl('/my-recipes', { skipLocationChange: true }).then(() => {
+      location.reload();
+    });
   }
 }

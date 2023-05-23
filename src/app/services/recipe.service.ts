@@ -23,10 +23,10 @@ export class RecipeService {
 
   public createJSONRecipe(): any {
     var obj: any = {
-      "title": "Spaghetti Carbonara",
-      "description": "A classic spaghetti carbonara recipe",
-      "image": "https://images.unsplash.com/photo-1554118811-1e0d5826cf09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "body": "This spaghetti carbonara recipe is creamy, cheesy, and absolutely delicious!",
+      "title": "Beer Carbonara",
+      "description": "A classic Beer recipe",
+      "image": "https://i.ibb.co/64sDwJH/image-processing20200410-24803-7dh2je.png",
+      "body": "This beer carbonara recipe is creamy, cheesy, and absolutely delicious!",
       "recipeIngredients": [
           {
               "ingredient": "1J1sO3l9Aba4JxKmC4lVv",
@@ -46,11 +46,9 @@ export class RecipeService {
     return obj;
   }
 
-  public createNewRecipe(): Observable<any> {
-    var jsonObj: any;
-    jsonObj = this.createJSONRecipe();
-    console.log(jsonObj);
-    return this.http.post("http://localhost:8080/app/recipes", jsonObj);
+  public createNewRecipe(jsonParam: any): Observable<any> {
+    console.log("Adding this to DB -> \n", jsonParam);
+    return this.http.post("http://localhost:8080/app/recipes", jsonParam);
   }
 
   public addRecipeToUserList(newID: any): Observable<any> {
