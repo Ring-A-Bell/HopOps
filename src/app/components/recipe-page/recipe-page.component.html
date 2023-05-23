@@ -10,41 +10,31 @@
     </div>
   </div>
   <button class="btn btn-primary create-new" (click)="renderForm()">Create New</button>
-  <form #recipeForm="ngForm">
+  <form [formGroup]="inputFormDetails" (ngSubmit)="submitRecipe()">
   <div id="input-form">
     <mat-form-field>
-      <mat-label>Recipe ID</mat-label>Recipe ID
-      <input matInput [(ngModel)]="recipeID" name="recipeID">
+      <mat-label>Recipe Name</mat-label>Recipe ID
+      <input id="name" type="text" formControlName="recipeID">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Title</mat-label>Title
-      <input matInput [(ngModel)]="title" name="title">
+      <input matInput formControlName="title">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Description</mat-label>Description
-      <textarea matInput [(ngModel)]="description" name="description"></textarea>
+      <textarea formControlName="description"></textarea>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Image URL</mat-label>Image URL
-      <input matInput [(ngModel)]="image" name="image">
+      <input formControlName="image">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Body</mat-label>Body
-      <textarea matInput [(ngModel)]="body" name="body"></textarea>
+      <textarea matInput formControlName="body"></textarea>
     </mat-form-field>
-    <div *ngFor="let ingredient of recipeIngredients; let i = index">
-      <mat-form-field>
-        <mat-label>Ingredient</mat-label>Ingredient
-        <input matInput [(ngModel)]="ingredient.ingredient" name="ingredient{{i}}">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Quantity</mat-label>Quantity
-        <input matInput [(ngModel)]="ingredient.quantity" name="quantity{{i}}">
-      </mat-form-field>
-    </div>
     <button mat-button (click)="addIngredient()">Add Ingredient</button>
-    <mat-option [(ngModel)]="favorite" name="favorite">Favorite</mat-option>
-    <button (click)="submitRecipe()">Submit</button>
+    <mat-option formControlName="favorite">Favorite</mat-option>
+    <button type="submit">Submit</button>
   </div>
   </form>
 </div>
