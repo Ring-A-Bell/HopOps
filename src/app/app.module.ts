@@ -20,6 +20,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule} from '@angular/material/core';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { MatOptionModule} from '@angular/material/core';
     MatSelectModule,
     MatOptionModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoginPageComponent,
+    IonicModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
