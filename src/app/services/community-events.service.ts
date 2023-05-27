@@ -12,7 +12,7 @@ export class CommunityEventsService {
   public getAllCommunityEvents(): Observable<any> {
     var jsonevent: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/gatherings");
+    return this.http.get("/app/gatherings");
   }
 
 }

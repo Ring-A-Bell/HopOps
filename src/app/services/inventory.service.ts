@@ -12,13 +12,13 @@ export class InventoryService {
   public getInventory(inventoryID: string): Observable<any> {
     var jsonInventories: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/inventories/" + inventoryID);
+    return this.http.get("/app/inventories/" + inventoryID);
   }
 
   public getUserInventories(ownerID: string): Observable<any> {
     var jsonInventories: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/inventories/user/" + ownerID);
+    return this.http.get("/app/inventories/user/" + ownerID);
   }
 
   public createJSONInventory(ownerID: string): any {
@@ -33,6 +33,6 @@ export class InventoryService {
     var jsonObj: any;
     jsonObj = this.createJSONInventory(ownerID);
     console.log(jsonObj);
-    return this.http.post("http://localhost:8080/app/inventories", jsonObj);
+    return this.http.post("/app/inventories", jsonObj);
   }
 }

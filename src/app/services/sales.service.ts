@@ -14,6 +14,6 @@ export class SalesService {
   // Returns json list object of sales
   //
   getSaleHistory(user: string) {
-    return this.http.get(this.hostname + '/app/saleHistory/' + user);
+    return this.http.get('/app/saleHistory/' + user);
   }
 }

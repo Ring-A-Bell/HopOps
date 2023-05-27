@@ -12,13 +12,13 @@ export class RecipeService {
   public getUserRecipes(): Observable<any> {
     var jsonRecipes: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/userrecipes/" + this.userID);
+    return this.http.get("/app/userrecipes/" + this.userID);
   }
 
   public getAllRecipes(): Observable<any> {
     var jsonRecipes: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/recipes");
+    return this.http.get("/app/recipes");
   }
 
   public createJSONRecipe(): any {
@@ -48,7 +48,7 @@ export class RecipeService {
 
   public createNewRecipe(jsonParam: any): Observable<any> {
     console.log("Adding this to DB -> \n", jsonParam);
-    return this.http.post("http://localhost:8080/app/recipes", jsonParam);
+    return this.http.post("/app/recipes", jsonParam);
   }
 
   public addRecipeToUserList(newID: any): Observable<any> {
@@ -56,6 +56,6 @@ export class RecipeService {
       "recipeID": newID
     }
     console.log(jsonObj);
-    return this.http.post("http://localhost:8080/app/userrecipes/" + this.userID, jsonObj);
+    return this.http.post("/app/userrecipes/" + this.userID, jsonObj);
   }
 }

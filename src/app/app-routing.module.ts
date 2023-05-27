@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'sales', component: SalesPageComponent },
   { path: 'community-events', component: CommunityEventsComponent },
   { path: 'inventory', component:  InventoryComponent},
-  { path: '', component: HomePageComponent},
   { path: 'login', component: LoginPageComponent },
+  { path: '', component: HomePageComponent},
   { path: '**', component: PagenotfoundComponent }
 ];
 
