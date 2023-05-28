@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../../services/recipe.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { set } from 'mongoose';
+import { nanoid } from 'nanoid';
 
 @Component({
   selector: 'app-recipe-page',
@@ -13,10 +13,12 @@ export class RecipePageComponent {
   constructor(private recipeService: RecipeService, private router: Router, private formBuilder: FormBuilder) { }
 
   jsonRecipes: any;
+  recipeUUID: string = nanoid();
 
   inputFormDetails = this.formBuilder.group({
     title: "",
     description: "",
+    recipeID: this.recipeUUID,
     image: "",
     body: "",
     recipeIngredients: [{ }],
@@ -69,9 +71,10 @@ export class RecipePageComponent {
   async createNewRecipe(newRecipe: any) {
     await this.recipeService.createNewRecipe(newRecipe).subscribe((data) => {
       var insertedID = data[0]._id;
-      console.log(insertedID);
-      console.log(data);
-      this.recipeService.addRecipeToUserList(insertedID).subscribe((data) => {
+      console.log("inserted oid, ", insertedID);
+      console.log("data ", data);
+      console.log("data recipeid ", data[0].recipeID);
+      this.recipeService.addRecipeToUserList(this.recipeUUID).subscribe((data) => {
         console.log(data);
       });
     });
