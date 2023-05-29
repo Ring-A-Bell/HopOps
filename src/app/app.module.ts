@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule} from '@angular/material/core';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { IonicModule } from '@ionic/angular';
+
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { IonicModule } from '@ionic/angular';
     FormsModule,
     ReactiveFormsModule,
     LoginPageComponent,
-    IonicModule
+    IonicModule,
+    SlickCarouselModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
