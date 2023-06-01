@@ -12,7 +12,7 @@ export class RecipeService {
   public getUserRecipes(): Observable<any> {
     var jsonRecipes: any;
     var jsonObj: any;
-    return this.http.get("/app/userrecipes/" + this.userID);
+    return this.http.get("/app/recipeLists/" + this.userID);
   }
 
   public getAllRecipes(): Observable<any> {
@@ -56,6 +56,6 @@ export class RecipeService {
       "recipeID": newID
     }
     console.log(jsonObj);
-    return this.http.post("/app/userrecipes/" + this.userID, jsonObj);
+    return this.http.post("/app/recipeLists/" + this.userID, jsonObj);
   }
 }
