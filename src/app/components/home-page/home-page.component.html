@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to HopOps</title>
   <style>
-    
-
     .quote-container {
       position: relative;
       width: 100%;
@@ -19,37 +18,6 @@
       align-items: center;
       text-align: left;
     }
-
-    .quote {
-      color: #fff;
-      font-size: 24px;
-      text-align: center;
-      padding: 20px;
-      position: absolute;
-      left: 20px;
-      top: 50px;
-      display: block;
-     
-    }
-    .quote h2 {
-  margin-bottom: 10px;
-    }
-
-    .quote p {
-  margin-bottom: 5px;
-    }
-
-    .carousel {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carousel .slide {
-  flex: 0 0 auto;
-  margin-right: 10px;
-}
   </style>
 </head>
 <body>
@@ -72,88 +40,46 @@
     <h1>Why Breweries Rely on HopOps</h1>
   </div>
 
-  <style>
-    .custom-card {
-      max-width: 450px;
-      margin: 0 auto;
-    }
-
-    .container {
-    text-align: center;
-  }
-
-  .container h1 {
-    font-style: italic;
-    color: rgb(51, 51, 102);
-  }
-  .custom-card {
-    transition: transform 0.3s;
-  }
-
-  .custom-card:hover {
-    transform: scale(1.05);
-  }
-  .spacer {
-  height: 40px;
-
-    .custom-card {
-      max-width: 450px;
-      margin: 0 auto;
-      height: 300px;
-    }
-
-    .card-body {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .card-img-top {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-    }
-  }
-  </style>
-
   <div class="row mt-5">
     <div class="col-md-4">
-      <div class="card custom-card">
+      <div class="card custom-card custom-card-md">
         <div class="card-body">
           <img src="assets/img/card1.jpg" class="card-img-top" alt="card1">
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card custom-card">
+      <div class="card custom-card custom-card-md">
         <div class="card-body">
           <img src="assets/img/card2.jpg" class="card-img-top" alt="card2">
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card custom-card">
+      <div class="card custom-card custom-card-md">
         <div class="card-body">
           <img src="assets/img/card3.jpg" class="card-img-top" alt="card3">
         </div>
       </div>
     </div>
   </div>
-  <div class="spacer"></div> 
-  <h1 class="text-center" style="color:  rgb(51, 51, 102); font-style: italic;">Frictionless Integration</h1>
-  <p style="text-align: center; font-size: 20px;">HopOps makes restaurant brewery management easy. Our leading restaurant software</p>
-  <p style="text-align: center; font-size: 20px;">integrates with hundreds of food and liquor distributors, restaurant technologies, and POS</p>
-  <p style="text-align: center; font-size: 20px;">systems to give you everything you need to drive simplicity, profit, and growth.</p>
-  
-  
- <div class="spacer"></div>
 
+  <div class="spacer"></div>
+
+  <h1 class="text-center" style="color: rgb(51, 51, 102); font-style: italic;">Frictionless Integration</h1>
+  <p style="text-align: center; font-size: 20px;">HopOps makes restaurant brewery management easy. Our leading
+    restaurant software</p>
+  <p style="text-align: center; font-size: 20px;">integrates with hundreds of food and liquor distributors,
+    restaurant technologies, and POS</p>
+  <p style="text-align: center; font-size: 20px;">systems to give you everything you need to drive simplicity, profit,
+    and growth.</p>
+
+  <div class="spacer"></div>
 
   <div class="carousel">
     <ngx-slick-carousel class="carousel" [config]="carouselOptions">
       <div ngxSlickItem class="slide" *ngFor="let item of items">
-        <div class="card custom-card">
+        <div class="card custom-card custom-card-carousel">
           <div class="card-body">
             <img [src]="item.imageUrl" class="card-img-top" [alt]="item.altText">
           </div>
@@ -164,26 +90,30 @@
 
   <div class="row mt-5">
     <div class="col-md-6">
-      <div class="text-md-right"> <!-- Add 'text-md-right' class to align the image to the right -->
+      <div class="text-md-right">
         <img src="assets/img/sales1.jpg" alt="Image">
       </div>
     </div>
     <div class="col-md-6">
       <div>
-        <h1 class="text-center" style="color:  rgb(51, 51, 102); font-style: italic;">Brewery Profitability</h1>
+        <h1 class="text-center" style="color: rgb(51, 51, 102); font-style: italic;">Brewery Profitability</h1>
         <br>
-        <p style="font-size: 20px;">Running a profitable brewery is a balancing act that goes far beyond the fermentation sciences.</p>
-        <p style="font-size: 20px;">Brewers must have everything required to brew and package beer in the near-term but be careful not to amass a surplus of raw ingredients, aluminum, glass, and cardboard that would create space issues and negatively impact cash flow.</p>
-        <p style="font-size: 20px;">It’s an annoying problem that all too often must be solved by switching from tab to tab on a makeshift spreadsheet during lautering or in-between hop additions.</p> 
-        <p style="font-size: 20px;">And worst of all – imagine how frustrating it would be if your current data management system locks you out of recording brewing data when you don’t have the inventory added to the system. Instead of focusing on milling in grain or adding hops during a boil, now you’re focused on tracking down the invoice – which is just not reasonable. In Beer30, you are </p>
+        <p style="font-size: 20px;">Running a profitable brewery is a balancing act that goes far beyond the
+          fermentation sciences.</p>
+        <p style="font-size: 20px;">Brewers must have everything required to brew and package beer in the near-term but
+          be careful not to amass a surplus of raw ingredients, aluminum, glass, and cardboard that would create space
+          issues and negatively impact cash flow.</p>
+        <p style="font-size: 20px;">It’s an annoying problem that all too often must be solved by switching from tab
+          to tab on a makeshift spreadsheet during lautering or in-between hop additions.</p>
+        <p style="font-size: 20px;">And worst of all – imagine how frustrating it would be if your current data
+          management system locks you out of recording brewing data when you don’t have the inventory added to the
+          system. Instead of focusing on milling in grain or adding hops during a boil, now you’re focused on tracking
+          down the invoice – which is just not reasonable. In Beer30, you are</p>
       </div>
     </div>
   </div>
-  
-  
 
   <app-footer></app-footer>
-
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
