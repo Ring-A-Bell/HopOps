@@ -11,7 +11,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 const routes: Routes = [
   { path: 'my-recipes', component: RecipePageComponent },
   { path: 'sales', component: SalesPageComponent },
-  { path: 'community-events', component: CommunityEventsComponent },
+  { path: '#/community-events', component: CommunityEventsComponent },
   { path: 'inventory', component:  InventoryComponent},
   { path: 'login', component: LoginPageComponent },
   { path: '', component: HomePageComponent},
