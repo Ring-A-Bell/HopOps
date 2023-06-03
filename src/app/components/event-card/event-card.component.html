@@ -1,30 +1,36 @@
 <div class="card-container">
   <div class="card">
     <div class="card-body">
-      <div class="event-image"><img src="assets/img/current-event1.jpg"></div>
-      <h3 class="card-ID">{{event.title}}</h3>
-      <p class="event-price">$20 per person</p>
-      <h5 class="card-ID">Time and Date: {{event.time | date: "short"}} </h5>
-      <p class="card-ID">{{event.rsvp}}</p>
-      <p class="card-ID">{{event.Description}}</p>
-      <br>  
-      <button class="event-rsvp-btn">RSVP</button>
+      <div class="event-wrapper">
+        <div class="event-image"><img src="assets/img/current-event1.jpg"></div>
+        <h3 class="card-ID">{{event.title}}</h3>
+        <p class="event-price">$20 per person</p>
+        <h5 class="card-ID">Time and Date: {{event.time | date: "short"}} </h5>
+        <p class="card-ID">{{event.rsvp}}</p>
+        <p class="card-ID">{{event.Description}}</p>
+        <br>  
+        <button class="event-rsvp-btn">RSVP</button>
+      </div>
     </div>
   </div>
 
   <div class="card">
     <div class="card-body">
-      <div class="event-image"><img src="assets/img/current-event2.jpg"></div>
-      <h3 class="card-ID">{{event.title}}</h3>
-      <p class="event-price">$10 per person</p>
-      <h5 class="card-ID">Time and Date: {{event.time | date: "short"}} </h5>
-      <p class="card-ID">{{event.rsvp}}</p>
-      <p class="card-ID">{{event.Description}}</p>
-      <br> 
-      <button class="event-rsvp-btn">RSVP</button>
+      <div class="event-wrapper">
+        <div class="event-image"><img src="assets/img/current-event2.jpg"></div>
+        <h3 class="card-ID">{{event.title}}</h3>
+        <p class="event-price">$10 per person</p>
+        <h5 class="card-ID">Time and Date: {{event.time | date: "short"}} </h5>
+        <p class="card-ID">{{event.rsvp}}</p>
+        <p class="card-ID">{{event.Description}}</p>
+        <br> 
+        <button class="event-rsvp-btn">RSVP</button>
+      </div>
     </div>
   </div>
 </div>
+
+
 
 
 
