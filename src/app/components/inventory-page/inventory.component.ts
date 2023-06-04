@@ -10,18 +10,15 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class InventoryComponent {
   constructor(private InventoryService: InventoryService, private router: Router) { }
-  private inventoryID: string = 'someRandomString';
-  private ownerID: string = 'someRandomString';
+  private ownerID: string = 'YPs-zlGU6gwxOAH3O-zWb';
 
-  public columnsToDisplay: string[] = ['Name', 'UnitSize', 'Quantity', 'Description'];
-  public dataSource = new MatTableDataSource();
-  public jsonInventories: any;
+  public columnsToDisplay: string[] = ['name', 'unitSize', 'quantity', 'description'];
+  public myDataSource: any;
 
   ngOnInit(): void {
-    this.InventoryService.getInventory(this.inventoryID).subscribe((data: any) => {
-      console.log(data);
-      this.jsonInventories = data;
-      this.dataSource = new MatTableDataSource(data);
+    this.InventoryService.getUserInventories(this.ownerID).subscribe((data: any) => {
+      console.log("data ", data);
+      this.myDataSource = new MatTableDataSource<any>(data);
       console.log("Inventory page loaded");
     });
   }
