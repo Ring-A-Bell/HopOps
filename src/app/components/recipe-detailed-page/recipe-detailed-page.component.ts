@@ -8,18 +8,17 @@ import { RecipeService } from '../../services/recipe.service';
 })
 export class RecipeDetailedPageComponent {
   @Input() selectedRecipe: any;
-  detailedRecipe: any;
 
   constructor(private recipeService: RecipeService) { }
 
-  ngAfterViewInit(): void {
+  /*ngAfterViewInit(): void {
     console.log("inside ngAfterViewInit");
     setTimeout(() => {
       this.recipeService.getSelectedRecipe().subscribe((data: any) => {
-        this.selectedRecipe = data;
-        console.log("Detailed recipe view -> ", this.selectedRecipe);
-      });
+      this.selectedRecipe = data;
+      console.log("Detailed recipe view -> ", this.selectedRecipe);
+    });
     }, 2000); 
     console.log("after subscribe");
-  }
+  }*/
 }
