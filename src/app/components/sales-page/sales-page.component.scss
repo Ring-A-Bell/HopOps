@@ -20,3 +20,20 @@
 .mat-mdc-row:hover .mat-mdc-cell {
     background-color: lightgray;
 }
+
+.background-image {
+    background-image: url('/assets/img/sales2.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  h1 {
+    color: #0c0c0c;
+  }
