@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'my-recipes', component: RecipePageComponent },
   { path: 'my-recipes/:id', component: RecipeDetailedPageComponent },
   { path: 'sales', component: SalesPageComponent },
-  { path: '#/community-events', component: CommunityEventsComponent },
+  { path: 'community-events', component: CommunityEventsComponent },
   { path: 'inventory', component:  InventoryComponent},
   { path: 'login', component: LoginPageComponent },
   { path: '', component: HomePageComponent},
@@ -21,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
