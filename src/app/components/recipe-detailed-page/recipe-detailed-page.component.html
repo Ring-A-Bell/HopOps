@@ -1,0 +1,20 @@
+<div class="card" *ngIf="selectedRecipe">
+    <img class="card-img-top" src="{{ selectedRecipe.image }}" alt="Recipe Image">
+    <div class="card-body">
+      <h5 class="card-title">{{ selectedRecipe.title }}</h5>
+      <p class="card-text">{{ selectedRecipe.description }}</p>
+      
+      <h6 class="card-subtitle">Ingredients:</h6>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ingredient of selectedRecipe.recipeIngredients">
+          {{ ingredient.ingredient }} - {{ ingredient.quantity }}
+        </li>
+      </ul>
+      
+      <h6 class="card-subtitle">Instructions:</h6>
+      <p class="card-text">{{ selectedRecipe.body }}</p>
+      
+      <p class="card-text">Favorite: {{ selectedRecipe.favorite ? 'Yes' : 'No' }}</p>
+    </div>
+  </div>
+  

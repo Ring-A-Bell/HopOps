@@ -7,9 +7,11 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CommunityEventsComponent } from './components/community-events/community-events.component';
 import { InventoryComponent } from './components/inventory-page/inventory.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RecipeDetailedPageComponent } from './components/recipe-detailed-page/recipe-detailed-page.component';
 
 const routes: Routes = [
   { path: 'my-recipes', component: RecipePageComponent },
+  { path: 'my-recipes/:id', component: RecipeDetailedPageComponent },
   { path: 'sales', component: SalesPageComponent },
   { path: '#/community-events', component: CommunityEventsComponent },
   { path: '#/inventory', component:  InventoryComponent},
