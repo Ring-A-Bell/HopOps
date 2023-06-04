@@ -10,8 +10,8 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class InventoryComponent {
   constructor(private InventoryService: InventoryService, private router: Router) { }
-  private inventoryID: string = "000000000000000000051";
-  private ownerID: string = "000000000000000000021";
+  private inventoryID: string = 'UwG5nfHXR9IU9h8wVt1Hk';
+  private ownerID: string = 'EF59VgLECpP2gDAV-kZ62';
 
   public columnsToDisplay: string[] = ['Name', 'UnitSize', 'Quantity', 'Description'];
   public dataSource = new MatTableDataSource();
