@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
   userID: String = "YPs-zlGU6gwxOAH3O-zWb";
+  detailedRecipe: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   constructor(private http: HttpClient) { }
 
   public getUserRecipes(): Observable<any> {
@@ -57,5 +58,15 @@ export class RecipeService {
     }
     console.log(jsonObj);
     return this.http.post("/app/recipeLists/" + this.userID, jsonObj);
+  }
+
+  public setSelectedRecipe(recipe: any) {
+    this.detailedRecipe.next(recipe);
+    console.log("setting this recipe -> ", this.detailedRecipe);
+  }
+
+  public getSelectedRecipe(): Observable<any> {
+    console.log("returning this recipe -> ", this.detailedRecipe);
+    return this.detailedRecipe.asObservable();
   }
 }
