@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'my-recipes/:id', component: RecipeDetailedPageComponent },
   { path: 'sales', component: SalesPageComponent },
   { path: '#/community-events', component: CommunityEventsComponent },
-  { path: '#/inventory', component:  InventoryComponent},
+  { path: 'inventory', component:  InventoryComponent},
   { path: 'login', component: LoginPageComponent },
   { path: '', component: HomePageComponent},
   { path: '**', component: PagenotfoundComponent }
