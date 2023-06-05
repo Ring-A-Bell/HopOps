@@ -44,3 +44,10 @@ bottom: 0;
 left: 0;
 width: 100%;
 }
+
+td {
+    background-image: linear-gradient(to right, #ff0000, #00ff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: black;
+  }

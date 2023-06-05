@@ -98,3 +98,10 @@
 h1 {
   color: #0c0c0c;
 }
+
+td {
+  background-image: linear-gradient(to right, #ff0000, #00ff00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: black;
+}
