@@ -47,7 +47,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/img/back1.jpg');
+  background-image: url('/assets/img/sales2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
@@ -86,4 +86,15 @@
   textarea {
     height: 150px;
   }
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+h1 {
+  color: #0c0c0c;
 }
