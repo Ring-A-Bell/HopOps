@@ -21,18 +21,16 @@ export class InventoryService {
     return this.http.get("/app/inventories/user/" + ownerID);
   }
 
-  public createJSONInventory(ownerID: string): any {
-    var obj: any = {
-      "ownerID": ownerID,
-      "ingredients": [ "TI7OBzZrGmEv6zVQI1vM8", "Cp4opcfHR6Yu6MgYcaK_3"]
-    }
-    return obj;
+  public createNewIngredient(jsonParam: any): Observable<any> {
+    console.log("Adding this to DB -> \n", jsonParam);
+    return this.http.post("/app/ingredients", jsonParam);
   }
 
-  public createNewInventory(ownerID: string): Observable<any> {
-    var jsonObj: any;
-    jsonObj = this.createJSONInventory(ownerID);
+  public addIngredientToInventory(newID: any): Observable<any> {
+    var jsonObj: any = {
+      "ingredientID": newID
+    }
     console.log(jsonObj);
-    return this.http.post("/app/inventories", jsonObj);
+    return this.http.post("/app/inventories2", jsonObj);
   }
 }

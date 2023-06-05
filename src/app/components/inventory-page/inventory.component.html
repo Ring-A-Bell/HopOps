@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="forehead"></div>
 <div class="main-content">
-  <div class="container">
+  <div class="container" id="inventory">
     <table mat-table [dataSource]="myDataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -24,7 +24,23 @@
         <tr mat-row *matRowDef="let ingredient; columns: columnsToDisplay"></tr>
 
     </table>
-</div>
-  <button class="btn btn-primary create-new" (click)="createNewInventory()">Create New</button>
+  </div>
+  <button class="btn btn-primary create-new" id="renderFormButton" (click)="renderForm()">Create New</button>
+  <button class="btn btn-primary create-new" id="cancelFormButton" (click)="cancelForm()">Cancel</button>
+  
+    <form [formGroup]="inputFormDetails" (ngSubmit)="submitIngredient()">
+      <div id="input-form">
+        <label for="name">Name</label>
+        <input matInput formControlName="name">
+        <label for="description">Description</label>
+        <textarea formControlName="description"></textarea>
+        <label for="unitSize">Unit Size</label>
+        <textarea matInput formControlName="unitSize"></textarea>
+        <label for="quantity">Quantity</label>
+        <textarea matInput formControlName="quantity"></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <div class="forehead"></div>
 </div>
 <app-footer></app-footer>
