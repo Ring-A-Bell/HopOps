@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  constructor(private login: LoginService) { }
+
+  ngOnInit(): void {
+    if (this.login.isLoggedIn) {
+      this.hideLoginButton();
+    }
+  }
 
   hideLoginButton(): void {
     var loginButton = document.getElementById("login-btn");
