@@ -84,4 +84,9 @@ export class RecipePageComponent {
       });
     }, 1000);
   }
+
+  onDetailedView(recipe: any) {
+    this.recipeService.setSelectedRecipe(recipe);
+    console.log("this is the onDEtailedView function: ", recipe);
+  }
 }

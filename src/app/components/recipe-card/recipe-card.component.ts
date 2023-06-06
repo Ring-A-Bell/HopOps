@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RecipeService } from '../../services/recipe.service';
 
 
 @Component({
@@ -9,4 +10,10 @@ import { Component, Input } from '@angular/core';
 export class RecipeCardComponent {
   @Input() recipe: any;
 
+  constructor(private recipeService: RecipeService) { }
+
+  onDetailedViewRecipe() {
+    console.log("setting current recipe -> ", this.recipe);
+    this.recipeService.setSelectedRecipe(this.recipe);
+  }
 }

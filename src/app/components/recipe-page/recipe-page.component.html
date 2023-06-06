@@ -4,9 +4,9 @@
 <div class="main-content" >
   <div class="container" id="recipes">
     <div class="row justify-content-around">
-      <ng-container *ngFor="let recipe of jsonRecipes">
+      <ng-container *ngFor="let recipe of jsonRecipes; let i = index">
         <div class="col-md-4 col-sm-6 col-12">
-          <app-recipe-card [recipe]="recipe"></app-recipe-card>
+          <app-recipe-card [recipe]="recipe" (click)="onDetailedView(recipe)"></app-recipe-card>
           <div class="forehead"></div>
         </div>
       </ng-container>

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
   userID: String = "YPs-zlGU6gwxOAH3O-zWb";
+  detailedRecipe: any;
   constructor(private http: HttpClient) { }
 
   public getUserRecipes(): Observable<any> {
     var jsonRecipes: any;
     var jsonObj: any;
-    return this.http.get("/app/recipeLists/" + this.userID);
+    return this.http.get("http://localhost:8080/app/testroute/recipeLists/" + this.userID);
   }
 
   public getAllRecipes(): Observable<any> {
@@ -57,5 +58,19 @@ export class RecipeService {
     }
     console.log(jsonObj);
     return this.http.post("/app/recipeLists/" + this.userID, jsonObj);
+  }
+
+  public setSelectedRecipe(recipe: any): void {
+    this.detailedRecipe = recipe;
+    console.log("setting this recipe inside the service-> ", this.detailedRecipe);
+  }
+
+  public getSelectedRecipe(): any {
+    console.log("returning this recipe -> ", this.detailedRecipe);
+    return this.detailedRecipe;
+  }
+
+  public getIngredientByID(ingredientID: any): Observable<any> {
+    return this.http.get("http://localhost:8080/app/ingredients/" + ingredientID);
   }
 }
