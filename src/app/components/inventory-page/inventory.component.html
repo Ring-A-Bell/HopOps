@@ -4,7 +4,7 @@
 <hr/>
 <div class="main-content">
   <div class="container" id="inventory">
-    <table mat-table [dataSource]="myDataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="myDataSource" class="filled-table rounded mat-elevation-z8">
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
             <td mat-cell *matCellDef="let ingredient"> {{ingredient.name}} </td>

@@ -1,14 +1,14 @@
 <app-header></app-header>
 <div class="content-wrapper">
-  <div class="spacing-row"></div>
   <div class="background-image"></div>
+  <div class="forehead"></div>
   <h1 class="display-10 text-center"> Sale and Transaction History </h1>
   <hr/>
   <div class="spacing-row"></div>
 
   <div class="container">
     <!-- Sales Table Template -->
-    <table mat-table [dataSource]="saleList" class="mat-elevation-z8">
+    <table mat-table [dataSource]="saleList" class="filled-table rounded mat-elevation-z8">
       <!-- Column definitions -->
       <ng-container matColumnDef="SaleID">
         <th mat-header-cell *matHeaderCellDef> SaleID </th>
