@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile-page',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile-page.component.scss']
 })
 export class ProfilePageComponent {
+  userID: string = "XleamMUl3xwt7DGbuNb1K";
+  constructor(private http: HttpClient) { }
 
+  profileDetails: any;
+
+  ngOnInit(): void {
+    this.http.get("/app/users/" + this.userID).
+    subscribe((data: any) => {
+      this.profileDetails = data;
+      console.log("Profile details -> ", this.profileDetails);
+    });
+  }
 }
