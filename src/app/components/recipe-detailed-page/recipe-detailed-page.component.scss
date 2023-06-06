@@ -1,0 +1,23 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    .row {
+      align-items: center;
+      
+      .col-md-4 {
+        padding: 10px;
+      }
+      
+      .col-md-8 {
+        padding: 10px;
+        
+        .card-body {
+          padding: 10px;
+        }
+      }
+    }
+  }
+  

@@ -1,8 +1,8 @@
-<div class="card" style="width: 18rem;" (mouseover)="onDetailedViewRecipe(recipe)">
+<div class="card" style="width: 18rem;">
     <img src={{recipe.image}} class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
       <p class="card-text">{{recipe.description}}</p>
-      <a href="/my-recipes/{{recipe.recipeID}}" (click)="onDetailedViewRecipe(recipe)" class="btn btn-primary">Detailed View</a>
+      <a (click)="onDetailedViewRecipe()" routerLink="/my-recipes/{{recipe.recipeID}}" class="btn btn-primary">Detailed View</a>
     </div>
 </div>

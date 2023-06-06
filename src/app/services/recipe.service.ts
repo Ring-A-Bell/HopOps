@@ -7,13 +7,13 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class RecipeService {
   userID: String = "YPs-zlGU6gwxOAH3O-zWb";
-  detailedRecipe: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  detailedRecipe: any;
   constructor(private http: HttpClient) { }
 
   public getUserRecipes(): Observable<any> {
     var jsonRecipes: any;
     var jsonObj: any;
-    return this.http.get("/app/recipeLists/" + this.userID);
+    return this.http.get("http://localhost:8080/app/testroute/recipeLists/" + this.userID);
   }
 
   public getAllRecipes(): Observable<any> {
@@ -60,13 +60,17 @@ export class RecipeService {
     return this.http.post("/app/recipeLists/" + this.userID, jsonObj);
   }
 
-  public setSelectedRecipe(recipe: any) {
-    this.detailedRecipe.next(recipe);
-    console.log("setting this recipe -> ", this.detailedRecipe);
+  public setSelectedRecipe(recipe: any): void {
+    this.detailedRecipe = recipe;
+    console.log("setting this recipe inside the service-> ", this.detailedRecipe);
   }
 
-  public getSelectedRecipe(): Observable<any> {
+  public getSelectedRecipe(): any {
     console.log("returning this recipe -> ", this.detailedRecipe);
-    return this.detailedRecipe.asObservable();
+    return this.detailedRecipe;
+  }
+
+  public getIngredientByID(ingredientID: any): Observable<any> {
+    return this.http.get("http://localhost:8080/app/ingredients/" + ingredientID);
   }
 }

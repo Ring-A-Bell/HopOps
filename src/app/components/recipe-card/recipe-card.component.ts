@@ -12,8 +12,8 @@ export class RecipeCardComponent {
 
   constructor(private recipeService: RecipeService) { }
 
-  onDetailedViewRecipe(recipe: any) {
-    this.recipeService.setSelectedRecipe(recipe);
-    console.log("setting current recipe -> ", recipe);
+  onDetailedViewRecipe() {
+    console.log("setting current recipe -> ", this.recipe);
+    this.recipeService.setSelectedRecipe(this.recipe);
   }
 }
