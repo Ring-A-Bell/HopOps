@@ -47,11 +47,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/img/sales2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/img/sales2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  color: black;
   position: fixed;
-  opacity: 0.5; /* Adjust the opacity as desired */
+  opacity: 0.5;
   z-index: -1;
 }
 
@@ -88,15 +89,8 @@
   }
 }
 
-.fixed-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
 h1 {
-  color: #0c0c0c;
+  color: black;
 }
 
 td {
