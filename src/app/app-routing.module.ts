@@ -8,20 +8,22 @@ import { CommunityEventsComponent } from './components/community-events/communit
 import { InventoryComponent } from './components/inventory-page/inventory.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RecipeDetailedPageComponent } from './components/recipe-detailed-page/recipe-detailed-page.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 const routes: Routes = [
   { path: 'my-recipes', component: RecipePageComponent },
   { path: 'my-recipes/:id', component: RecipeDetailedPageComponent },
   { path: 'sales', component: SalesPageComponent },
-  { path: '#/community-events', component: CommunityEventsComponent },
-  { path: '#/inventory', component:  InventoryComponent},
+  { path: 'community-events', component: CommunityEventsComponent },
+  { path: 'inventory', component:  InventoryComponent},
   { path: 'login', component: LoginPageComponent },
+  { path: 'profile', component: ProfilePageComponent },
   { path: '', component: HomePageComponent},
   { path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

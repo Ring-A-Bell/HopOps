@@ -1,31 +1,17 @@
-.spacing-row {
-    margin: 20px;
-}
-
-.mat-column-PaymentMethod {
-    text-align: center;
-}
-.mat-column-SaleDate {
-    text-align: center;
-}
-
-// Change curosr when hovering tanle
-.mat-mdc-row .mat-mdc-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-    cursor: pointer;
-}
-
-// Change table row when hovered
-.mat-mdc-row:hover .mat-mdc-cell {
-    background-color: lightgray;
-}
-
-.background-image {
-    background-image: url('/assets/img/sales2.jpg'); 
+.content-wrapper {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .container {
+    margin-bottom: 100px; /* Adjust this value to create space between the table and footer */
+  }
+  
+  .background-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/img/sales2.jpg'); 
     background-repeat: no-repeat;
     background-size: cover;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -33,7 +19,21 @@
     z-index: -1;
     opacity: 0.5;
   }
-
+  
   h1 {
-    color: #0c0c0c;
+    color: black;
   }
+  
+  td {
+    background-image: linear-gradient(to right, #ff0000, #00ff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: black;
+  }
+  
+  .app-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  

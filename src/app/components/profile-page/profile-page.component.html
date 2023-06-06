@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>User Profile</title>
+</head>
+
+<body>
+  <app-header></app-header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="profile">
+          <h1 class="text-center">User Profile</h1>
+          <div class="profile-info">
+            <img src="{{profileDetails.profilePic}}" referrerpolicy="no-referrer" alt="Profile Photo" class="profile-photo">
+            <h3 class="text-center">{{profileDetails?.name}}</h3>
+            <p><strong>Email: </strong>{{profileDetails?.email}}</p>
+            <p><strong>Premium Status: </strong>{{profileDetails?.premiumStatus=="true"? "Available": "Not Available"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

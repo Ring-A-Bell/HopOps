@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./recipe-detailed-page.component.scss']
 })
 export class RecipeDetailedPageComponent {
-  selectedRecipe: any;
+ selectedRecipe: any;
 
   constructor(private recipeService: RecipeService) { }
 
@@ -43,5 +43,5 @@ export class RecipeDetailedPageComponent {
       map((data: any) => data.unitSize)
     );
   }
-  
+ 
 }

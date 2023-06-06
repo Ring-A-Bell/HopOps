@@ -1,35 +1,33 @@
 <app-header></app-header>
-<div class="forehead"></div>
-<div class="spacing-row"></div>
-<div class="background-image"></div>
-<h1 class="display-10 text-center"> Sale and Transaction History </h1>
-<hr/>
-<div class="spacing-row"></div>
+<div class="content-wrapper">
+  <div class="background-image"></div>
+  <div class="forehead"></div>
+  <h1 class="display-10 text-center"> Sale and Transaction History </h1>
+  <hr/>
+  <div class="spacing-row"></div>
 
-<div class="container">
+  <div class="container">
     <!-- Sales Table Template -->
-    <table mat-table [dataSource]="saleList" class="mat-elevation-z8">
+    <table mat-table [dataSource]="saleList" class="filled-table rounded mat-elevation-z8">
+      <!-- Column definitions -->
+      <ng-container matColumnDef="SaleID">
+        <th mat-header-cell *matHeaderCellDef> SaleID </th>
+        <td mat-cell *matCellDef="let sale"> {{ sale.saleID }} </td>
+      </ng-container>
+      <ng-container matColumnDef="SaleDate">
+        <th mat-header-cell *matHeaderCellDef> Sale Date </th>
+        <td mat-cell *matCellDef="let sale"> {{ sale.date | date: "short" }} </td>
+      </ng-container>
+      <ng-container matColumnDef="PaymentMethod">
+        <th mat-header-cell *matHeaderCellDef> Payment Method </th>
+        <td mat-cell *matCellDef="let sale"> {{ sale.paymentMethod }} </td>
+      </ng-container>
 
-        <!-- Column defintions -->
-        <ng-container matColumnDef="SaleID">
-            <th mat-header-cell *matHeaderCellDef> SaleID </th>
-            <td mat-cell *matCellDef="let sale"> {{sale.saleID}} </td>
-        </ng-container>
-        <ng-container matColumnDef="SaleDate">
-            <th mat-header-cell *matHeaderCellDef> Sale Date </th>
-            <td mat-cell *matCellDef="let sale"> {{sale.date | date: "short"}} </td>
-        </ng-container>
-        <ng-container matColumnDef="PaymentMethod">
-            <th mat-header-cell *matHeaderCellDef> Payment Method </th>
-            <td mat-cell *matCellDef="let sale"> {{sale.paymentMethod}} </td>
-        </ng-container>
-
-        <!-- Row Declarations -->
-        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-        <tr mat-row 
-        (click)="clickedRow(myRowData.saleID)"
-        *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
-
+      <!-- Row Declarations -->
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row (click)="clickedRow(myRowData.saleID)" *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
     </table>
+  </div>
 </div>
+
 <app-footer></app-footer>
