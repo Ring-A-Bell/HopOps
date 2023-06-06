@@ -15,13 +15,15 @@ export class ProfilePageComponent {
   profileDetails: any;
 
   ngOnInit(): void {
+    let header = new HeaderComponent();
     this.http.get("/app/users/" + this.userID).
     subscribe((data: any) => {
       this.profileDetails = data;
       console.log("Profile details -> ", this.profileDetails);
+      if(data) {
+        console.log("User is logged in");
+        header.hideLoginButton();
+      }
     });
-    if(this.profileDetails) {
-      //this.header.hideLoginButton();
-    }
   }
 }
