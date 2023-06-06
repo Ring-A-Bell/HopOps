@@ -13,7 +13,7 @@ export class RecipeService {
   public getUserRecipes(): Observable<any> {
     var jsonRecipes: any;
     var jsonObj: any;
-    return this.http.get("http://localhost:8080/app/testroute/recipeLists/" + this.userID);
+    return this.http.get("app/recipeLists/" + this.userID);
   }
 
   public getAllRecipes(): Observable<any> {
@@ -71,6 +71,6 @@ export class RecipeService {
   }
 
   public getIngredientByID(ingredientID: any): Observable<any> {
-    return this.http.get("http://localhost:8080/app/ingredients/" + ingredientID);
+    return this.http.get("/app/ingredients/" + ingredientID);
   }
 }
