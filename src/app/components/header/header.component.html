@@ -1,38 +1,40 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/logo_thumbnail.png" class="logo-image">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/my-recipes">Recipes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/inventory">Inventory</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/sales">Sales Dashboard</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              About Us
-            </a>
-            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <a class="dropdown-item" href="#">Brew Tracking</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Report an Issue</a>
-            </div>
-          </li>
-        </ul>
-        <a class="btn btn-primary" routerLink="/login">Log In</a>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/logo_thumbnail.png" class="logo-image">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/my-recipes">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/inventory">Inventory</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/sales">Sales Dashboard</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About Us
+          </a>
+          <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <a class="dropdown-item" href="#">Brew Tracking</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Report an Issue</a>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <a class="btn btn-primary login-btn" id="login-btn" routerLink="/login">Log In</a>
+        <a class="btn btn-secondary profile-btn" id="profile-btn" routerLink="/profile">Profile</a>
       </div>
     </div>
-  </nav>
-  
+  </div>
+</nav>
