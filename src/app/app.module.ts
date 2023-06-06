@@ -24,6 +24,7 @@ import { MatOptionModule} from '@angular/material/core';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { IonicModule } from '@ionic/angular';
 import { RecipeDetailedPageComponent } from './components/recipe-detailed-page/recipe-detailed-page.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 
 
@@ -40,7 +41,8 @@ import { RecipeDetailedPageComponent } from './components/recipe-detailed-page/r
     CommunityEventsComponent,
     InventoryComponent,
     EventCardComponent,
-    RecipeDetailedPageComponent
+    RecipeDetailedPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
