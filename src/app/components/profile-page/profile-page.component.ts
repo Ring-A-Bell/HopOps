@@ -9,7 +9,7 @@ import { HeaderComponent } from '../header/header.component';
   styleUrls: ['./profile-page.component.scss']
 })
 export class ProfilePageComponent {
-  userID: string = "XleamMUl3xwt7DGbuNb1K";
+  userID: string = "";
   constructor(private http: HttpClient, private login: LoginService) { }
 
   profileDetails: any;
