@@ -19,7 +19,7 @@
             <img src="{{profileDetails.profilePic}}" referrerpolicy="no-referrer" alt="Profile Photo" class="profile-photo">
             <h3 class="text-center">{{profileDetails?.name}}</h3>
             <p><strong>Email: </strong>{{profileDetails?.email}}</p>
-            <p><strong>Premium Status: </strong>{{profileDetails?.premiumStatus}}</p>
+            <p><strong>Premium Status: </strong>{{profileDetails?.premiumStatus=="false"? "Not Available": "Available"}}</p>
           </div>
         </div>
       </div>
